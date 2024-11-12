@@ -12,6 +12,6 @@ docker run -d --name logestic_mysql -p 3306:3306 --network logestic-network -e M
 # --> PhpMyAdmin
 docker run -d --name logestic-phpmyadmin -p 3307:80 --link logestic_mysql:db --network logestic-network phpmyadmin/phpmyadmin:latest
 
-# # --> Padafand
-# docker build -t padafand:latest .
-# docker run -d --name Padafand -p 8001:8001 -v $(pwd):/app --network padafand-network padafand
+# --> logestic
+docker build -t logestic:latest .
+docker run -d --name logestic -p 8001:8001 -v $(pwd):/app --network logestic-network logestic
